@@ -1,1090 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moti Crafts | DIY Jewelry Raw Materials & Bead Supplies</title>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-primary: #FFF5F7;
-            --text-dark: #2B1D24;
-            --cta-pink: #C73E67;
-            --cta-hover: #a82e52;
-            --accent-rose: #E8AEB7;
-            --accent-gold: #C8A96A;
-            --white: #ffffff;
-            --glass-bg: rgba(255, 255, 255, 0.75);
-            --glass-border: rgba(232, 174, 183, 0.3);
-            --shadow-soft: 0 10px 30px rgba(43, 29, 36, 0.05);
-            --shadow-card: 0 15px 35px rgba(199, 62, 103, 0.08);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-dark);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, .font-serif {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* --- Announcement Bar --- */
-        .announcement-bar {
-            background: linear-gradient(90deg, var(--text-dark), #3d2933);
-            color: var(--bg-primary);
-            text-align: center;
-            padding: 8px 16px;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            font-weight: 500;
-        }
-
-        .announcement-bar span {
-            color: var(--accent-gold);
-            font-weight: 600;
-        }
-
-        /* --- Header / Navigation --- */
-        .header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--glass-border);
-            transition: var(--transition);
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 16px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo i {
-            color: var(--cta-pink);
-            font-size: 1.5rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--cta-pink);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--cta-pink);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .icon-btn {
-            background: none;
-            border: none;
-            font-size: 1.25rem;
-            color: var(--text-dark);
-            cursor: pointer;
-            position: relative;
-            transition: var(--transition);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .icon-btn:hover {
-            background: rgba(199, 62, 103, 0.1);
-            color: var(--cta-pink);
-        }
-
-        .badge {
-            position: absolute;
-            top: 2px;
-            right: 2px;
-            background-color: var(--cta-pink);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 700;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            max-width: 1280px;
-            margin: 20px auto 60px;
-            padding: 0 24px;
-        }
-
-        .hero-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,245,247,0.5)), url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            border-radius: 24px;
-            padding: 80px 60px;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-soft);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-card::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            background: linear-gradient(90deg, rgba(255,245,247,0.95) 0%, rgba(255,245,247,0.7) 50%, rgba(255,245,247,0.2) 100%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 580px;
-        }
-
-        .tagline {
-            display: inline-block;
-            background: rgba(199, 62, 103, 0.1);
-            color: var(--cta-pink);
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .hero-title {
-            font-size: 3.2rem;
-            line-height: 1.15;
-            color: var(--text-dark);
-            margin-bottom: 16px;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            color: #5a4751;
-            margin-bottom: 32px;
-        }
-
-        .btn-primary {
-            background-color: var(--cta-pink);
-            color: var(--white);
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(199, 62, 103, 0.25);
-            transition: var(--transition);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--cta-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(199, 62, 103, 0.35);
-        }
-
-        /* --- Section Titles --- */
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--text-dark);
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            color: #6e5864;
-            font-size: 1rem;
-        }
-
-        /* --- Categories Section --- */
-        .categories {
-            max-width: 1280px;
-            margin: 0 auto 80px;
-            padding: 0 24px;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .category-card {
-            background: var(--white);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 24px;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .category-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-card);
-            border-color: var(--accent-rose);
-        }
-
-        .category-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(232, 174, 183, 0.25);
-            color: var(--cta-pink);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin: 0 auto 16px;
-            transition: var(--transition);
-        }
-
-        .category-card:hover .category-icon {
-            background: var(--cta-pink);
-            color: var(--white);
-        }
-
-        .category-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 4px;
-        }
-
-        .category-count {
-            font-size: 0.85rem;
-            color: #8c7381;
-        }
-
-        /* --- Products Section --- */
-        .products {
-            max-width: 1280px;
-            margin: 0 auto 80px;
-            padding: 0 24px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 28px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-card);
-        }
-
-        .product-img-wrapper {
-            position: relative;
-            padding-top: 80%;
-            overflow: hidden;
-            background: #fdf0f3;
-        }
-
-        .product-img {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .product-card:hover .product-img {
-            transform: scale(1.06);
-        }
-
-        .product-tag {
-            position: absolute;
-            top: 12px; left: 12px;
-            background: var(--accent-gold);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .product-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-rating {
-            color: var(--accent-gold);
-            font-size: 0.85rem;
-            margin-bottom: 8px;
-        }
-
-        .product-rating span {
-            color: #8c7381;
-            margin-left: 4px;
-        }
-
-        .product-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-            text-decoration: none;
-        }
-
-        .product-price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--cta-pink);
-            margin-bottom: 16px;
-            margin-top: auto;
-        }
-
-        .btn-add-cart {
-            width: 100%;
-            background: transparent;
-            border: 1.5px solid var(--cta-pink);
-            color: var(--cta-pink);
-            padding: 10px;
-            border-radius: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .btn-add-cart:hover {
-            background: var(--cta-pink);
-            color: white;
-        }
-
-        /* --- Trust / Value Props --- */
-        .trust-section {
-            background: rgba(255, 255, 255, 0.6);
-            border-top: 1px solid var(--glass-border);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 50px 24px;
-            margin-bottom: 80px;
-        }
-
-        .trust-grid {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
-        }
-
-        .trust-card {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .trust-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--white);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--cta-pink);
-            font-size: 1.3rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            border: 1px solid var(--glass-border);
-            flex-shrink: 0;
-        }
-
-        .trust-text h4 {
-            font-size: 1rem;
-            color: var(--text-dark);
-        }
-
-        .trust-text p {
-            font-size: 0.85rem;
-            color: #7a6471;
-        }
-
-        /* --- Footer --- */
-        .footer {
-            background-color: var(--text-dark);
-            color: #e0d5db;
-            padding: 70px 24px 20px;
-        }
-
-        .footer-grid {
-            max-width: 1280px;
-            margin: 0 auto 50px;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 40px;
-        }
-
-        .footer-brand p {
-            margin: 16px 0 24px;
-            font-size: 0.95rem;
-            color: #b5a3ad;
-            max-width: 320px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 12px;
-        }
-
-        .social-icon {
-            width: 38px;
-            height: 38px;
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--bg-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background: var(--cta-pink);
-            color: white;
-        }
-
-        .footer-title {
-            color: var(--white);
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 600;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #b5a3ad;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-rose);
-        }
-
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .newsletter-input {
-            padding: 12px 16px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            outline: none;
-        }
-
-        .newsletter-input::placeholder {
-            color: #8c7884;
-        }
-
-        .footer-bottom {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding-top: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: center;
-            font-size: 0.85rem;
-            color: #8c7884;
-        }
-
-        /* --- Shopping Cart Drawer --- */
-        .cart-drawer-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(43, 29, 36, 0.5);
-            backdrop-filter: blur(4px);
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .cart-drawer-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .cart-drawer {
-            position: fixed;
-            top: 0; right: -420px;
-            width: 100%;
-            max-width: 400px;
-            height: 100%;
-            background: var(--white);
-            z-index: 2001;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition);
-        }
-
-        .cart-drawer.active {
-            right: 0;
-        }
-
-        .cart-header {
-            padding: 20px 24px;
-            border-bottom: 1px solid var(--glass-border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cart-header h3 {
-            font-size: 1.2rem;
-            color: var(--text-dark);
-        }
-
-        .close-cart {
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-            color: var(--text-dark);
-        }
-
-        .cart-items {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .cart-item {
-            display: flex;
-            gap: 14px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid #f3e6e9;
-            align-items: center;
-        }
-
-        .cart-item-img {
-            width: 64px;
-            height: 64px;
-            border-radius: 10px;
-            object-fit: cover;
-            background: #fdf0f3;
-        }
-
-        .cart-item-details {
-            flex-grow: 1;
-        }
-
-        .cart-item-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .cart-item-price {
-            font-size: 0.9rem;
-            color: var(--cta-pink);
-            font-weight: 700;
-            margin-top: 4px;
-        }
-
-        .cart-item-remove {
-            color: #a38c98;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        .cart-item-remove:hover {
-            color: var(--cta-pink);
-        }
-
-        .cart-footer {
-            padding: 20px 24px;
-            border-top: 1px solid var(--glass-border);
-            background: #fffbfd;
-        }
-
-        .cart-total-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 16px;
-        }
-
-        .btn-checkout {
-            width: 100%;
-            background-color: var(--cta-pink);
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn-checkout:hover {
-            background-color: var(--cta-hover);
-        }
-
-        /* --- Responsiveness --- */
-        @media (max-width: 992px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .hero-title {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .hero-card {
-                padding: 40px 24px;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moti Crafts | Premium Raw Materials & Accessories</title>
+  <style>
+    :root {
+      --bg-color: #FFF5F7;
+      --text-main: #2B1D24;
+      --primary-pink: #C73E67;
+      --pink-hover: #A82E52;
+      --card-bg: #FFFFFF;
+      --border-color: #F1D4E0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.5; }
+
+    /* Top Announcement Bar */
+    .announcement {
+      background: #FFF;
+      text-align: center;
+      padding: 6px;
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Navbar Header */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255, 245, 247, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 5%;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--text-main); text-decoration: none; font-style: italic; }
+    nav a { margin: 0 12px; text-decoration: none; color: var(--text-main); font-weight: 500; cursor: pointer; }
+    nav a:hover { color: var(--primary-pink); }
+    .header-icons { display: flex; gap: 15px; align-items: center; cursor: pointer; }
+    .cart-badge { background: var(--primary-pink); color: #fff; border-radius: 50%; padding: 2px 7px; font-size: 0.75rem; }
+
+    /* Main Container */
+    .container { padding: 30px 5%; min-height: 75vh; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(90deg, #FCE4EC 0%, #F8BBD0 100%);
+      border-radius: 16px; padding: 40px; text-align: center; margin-bottom: 30px;
+    }
+    .hero-banner h1 { font-size: 2.2rem; color: var(--text-main); margin-bottom: 10px; }
+    .btn-pink {
+      background: var(--primary-pink); color: #fff; border: none; padding: 10px 24px;
+      border-radius: 20px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block;
+    }
+    .btn-pink:hover { background: var(--pink-hover); }
+
+    /* Grid Layout for Collections & Products */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+    .card {
+      background: var(--card-bg); border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border-color); cursor: pointer; transition: 0.2s;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .card img { width: 100%; height: 200px; object-fit: cover; }
+    .card-body { padding: 15px; text-align: center; }
+    .card-title { font-weight: 600; margin-bottom: 6px; font-size: 0.95rem; }
+    .card-count { color: #666; font-size: 0.85rem; }
+    .price-tag { color: var(--primary-pink); font-weight: 700; margin-top: 5px; }
+
+    /* Detailed Product Page */
+    .p-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .p-detail img { width: 100%; border-radius: 12px; }
+    .p-meta h2 { font-size: 1.8rem; margin-bottom: 10px; }
+    .p-rating { color: #FFA000; font-size: 0.9rem; margin-bottom: 15px; }
+    .p-price { font-size: 1.4rem; color: var(--primary-pink); font-weight: 700; margin-bottom: 15px; }
+    .stock-status { color: #2E7D32; font-size: 0.85rem; margin-bottom: 15px; }
+    .p-desc { margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px; font-size: 0.9rem; color: #444; }
+
+    /* Cart View Page */
+    .cart-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; }
+    .cart-table th, .cart-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+    .qty-btn { padding: 4px 10px; border: 1px solid #ccc; background: #fff; cursor: pointer; border-radius: 4px; }
+
+    /* Footer */
+    footer { background: #222; color: #fff; padding: 40px 5% 20px; margin-top: 50px; font-size: 0.9rem; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 20px; }
+  </style>
 </head>
 <body>
 
-    <!-- Announcement Bar -->
-    <div class="announcement-bar">
-        ✨ Free Domestic Shipping on Craft Orders Over Rs. 2,500! Use Code: <span>MOTICRAFT</span>
+  <div class="announcement">Welcome to our store</div>
+
+  <header>
+    <a href="#" class="logo" onclick="nav('home')">Moti Crafts</a>
+    <nav>
+      <a onclick="nav('home')">Home</a>
+      <a onclick="nav('collections')">Products</a>
+      <a onclick="nav('cart')">Cart</a>
+    </nav>
+    <div class="header-icons" onclick="nav('cart')">
+      🛒 Cart <span class="cart-badge" id="badge">0</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- HOME PAGE -->
+    <div id="home" class="page-view active">
+      <div class="hero-banner">
+        <h1>Moti Crafts</h1>
+        <p>Premium Raw Materials & Accessories</p>
+        <br>
+        <button class="btn-pink" onclick="nav('collections')">Explore Collections</button>
+      </div>
+
+      <h3 style="margin-bottom: 20px;">Premium Raw Materials</h3>
+      <div class="grid" id="category-grid"></div>
     </div>
 
-    <!-- Navigation Bar -->
-    <header class="header">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <i class="fa-solid fa-gem"></i> Moti Crafts
-            </a>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#categories">Beads & Charms</a></li>
-                <li><a href="#products">DIY Kits</a></li>
-                <li><a href="#products">Tools & Wires</a></li>
-                <li><a href="#footer">Contact Us</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="icon-btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button class="icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i></button>
-                <button class="icon-btn" id="cartBtn" title="Shopping Cart">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span class="badge" id="cartCount">0</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-card">
-            <div class="hero-content">
-                <span class="tagline">Premium Crafting Supplies</span>
-                <h1 class="hero-title">Craft Your Unique Dream Jewelry</h1>
-                <p class="hero-description">Discover Pakistan's finest collection of handmade beads, pearlised charms, DIY raw materials, and artisanal jewelry tools.</p>
-                <a href="#products" class="btn-primary">
-                    Shop Collection <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories" id="categories">
-        <div class="section-header">
-            <h2 class="section-title">Explore Supplies</h2>
-            <p class="section-subtitle">Browse curated materials for your handmade creations</p>
-        </div>
-        <div class="categories-grid">
-            <div class="category-card">
-                <div class="category-icon"><i class="fa-solid fa-circle-dot"></i></div>
-                <h3 class="category-title">Glass Beads</h3>
-                <span class="category-count">120+ Variants</span>
-            </div>
-            <div class="category-card">
-                <div class="category-icon"><i class="fa-regular fa-sun"></i></div>
-                <h3 class="category-title">Pearlised & Acrylic</h3>
-                <span class="category-count">85+ Variants</span>
-            </div>
-            <div class="category-card">
-                <div class="category-icon"><i class="fa-solid fa-feather"></i></div>
-                <h3 class="category-title">Metal Charms</h3>
-                <span class="category-count">200+ Designs</span>
-            </div>
-            <div class="category-card">
-                <div class="category-icon"><i class="fa-solid fa-toolbox"></i></div>
-                <h3 class="category-title">Tools & Wires</h3>
-                <span class="category-count">40+ Essentials</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="products" id="products">
-        <div class="section-header">
-            <h2 class="section-title">Best Sellers</h2>
-            <p class="section-subtitle">Top crafting essentials loved by creators</p>
-        </div>
-        <div class="products-grid">
-
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <span class="product-tag">Bestseller</span>
-                    <img src="https://images.unsplash.com/photo-1611591475285-a26ae287c90c?auto=format&fit=crop&w=600&q=80" alt="Pearlised Crystal Beads" class="product-img">
-                </div>
-                <div class="product-info">
-                    <div class="product-rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(48)</span>
-                    </div>
-                    <a href="#" class="product-title">Pastel Pearlized Glass Bead Set</a>
-                    <div class="product-price">Rs. 450</div>
-                    <button class="btn-add-cart" onclick="addToCart('Pastel Pearlized Glass Bead Set', 450, 'https://images.unsplash.com/photo-1611591475285-a26ae287c90c?auto=format&fit=crop&w=600&q=80')">
-                        <i class="fa-solid fa-cart-plus"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <span class="product-tag">New</span>
-                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Gold Plated Charms" class="product-img">
-                </div>
-                <div class="product-info">
-                    <div class="product-rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-                        <span>(32)</span>
-                    </div>
-                    <a href="#" class="product-title">Vintage Celestial Gold Charms (10pcs)</a>
-                    <div class="product-price">Rs. 680</div>
-                    <button class="btn-add-cart" onclick="addToCart('Vintage Celestial Gold Charms', 680, 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80')">
-                        <i class="fa-solid fa-cart-plus"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=600&q=80" alt="Craft Wire Set" class="product-img">
-                </div>
-                <div class="product-info">
-                    <div class="product-rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(19)</span>
-                    </div>
-                    <a href="#" class="product-title">Tarnish Resistant Jewelry Wire 0.4mm</a>
-                    <div class="product-price">Rs. 350</div>
-                    <button class="btn-add-cart" onclick="addToCart('Tarnish Resistant Jewelry Wire', 350, 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=600&q=80')">
-                        <i class="fa-solid fa-cart-plus"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <span class="product-tag">Sale</span>
-                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" alt="Starter DIY Jewelry Kit" class="product-img">
-                </div>
-                <div class="product-info">
-                    <div class="product-rating">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span>(64)</span>
-                    </div>
-                    <a href="#" class="product-title">All-in-One Deluxe DIY Bracelet Kit</a>
-                    <div class="product-price">Rs. 1,450</div>
-                    <button class="btn-add-cart" onclick="addToCart('All-in-One Deluxe DIY Kit', 1450, 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80')">
-                        <i class="fa-solid fa-cart-plus"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Trust / Value Proposition -->
-    <section class="trust-section">
-        <div class="trust-grid">
-            <div class="trust-card">
-                <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                <div class="trust-text">
-                    <h4>Nationwide Shipping</h4>
-                    <p>Fast delivery across Pakistan</p>
-                </div>
-            </div>
-            <div class="trust-card">
-                <div class="trust-icon"><i class="fa-solid fa-award"></i></div>
-                <div class="trust-text">
-                    <h4>Premium Quality</h4>
-                    <p>Hand-picked durable supplies</p>
-                </div>
-            </div>
-            <div class="trust-card">
-                <div class="trust-icon"><i class="fa-solid fa-tags"></i></div>
-                <div class="trust-text">
-                    <h4>Wholesale Rates</h4>
-                    <p>Discount on bulk orders</p>
-                </div>
-            </div>
-            <div class="trust-card">
-                <div class="trust-icon"><i class="fa-solid fa-headset"></i></div>
-                <div class="trust-text">
-                    <h4>Friendly Support</h4>
-                    <p>Quick chat assistance</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" id="footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="logo" style="color: white;">
-                    <i class="fa-solid fa-gem" style="color: var(--cta-pink);"></i> Moti Crafts
-                </a>
-                <p>Providing premium DIY beads, metallic charms, and jewelry raw materials for creative minds across Pakistan.</p>
-                <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div>
-                <h4 class="footer-title">Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Wholesale Inquiries</a></li>
-                    <li><a href="#">Shipping Policy</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="footer-title">Help & Support</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Track Order</a></li>
-                    <li><a href="#">Return Policy</a></li>
-                    <li><a href="#">FAQs</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="footer-title">Crafters Club</h4>
-                <p style="font-size:0.85rem; color:#b5a3ad; margin-bottom:12px;">Subscribe to get exclusive discount codes & DIY ideas!</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
-                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
-                    <button type="submit" class="btn-primary" style="padding: 10px; justify-content:center;">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Moti Crafts. All Rights Reserved. Powered by GitHub Pages.</p>
-        </div>
-    </footer>
-
-    <!-- Shopping Cart Modal Drawer -->
-    <div class="cart-drawer-overlay" id="cartOverlay"></div>
-    <div class="cart-drawer" id="cartDrawer">
-        <div class="cart-header">
-            <h3>Your Shopping Cart</h3>
-            <button class="close-cart" id="closeCart"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <!-- Items added dynamically -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total-row">
-                <span>Subtotal:</span>
-                <span id="cartTotal">Rs. 0</span>
-            </div>
-            <button class="btn-checkout" onclick="alert('Proceeding to Checkout!')">Proceed to Checkout</button>
-        </div>
+    <!-- COLLECTIONS / PRODUCT LISTING PAGE -->
+    <div id="collections" class="page-view">
+      <h2 id="cat-heading" style="margin-bottom: 20px;">All Products</h2>
+      <div class="grid" id="product-grid"></div>
     </div>
 
-    <!-- Interactive Cart Script -->
-    <script>
-        let cart = [];
+    <!-- PRODUCT DETAIL PAGE VIEW -->
+    <div id="product-detail" class="page-view">
+      <div class="p-detail">
+        <img id="pd-img" src="" alt="Product">
+        <div class="p-meta">
+          <h2 id="pd-title">Product Title</h2>
+          <div class="p-rating">★ ★ ★ ★ ★ (4.9) | 10,000+ Happy Customers</div>
+          <div class="p-price" id="pd-price">Rs. 100.00 PKR</div>
+          <div class="stock-status">🟢 9998 in stock</div>
+          
+          <button class="btn-pink" style="width: 100%; margin-bottom: 10px;" onclick="addToCartCurrent()">Add to cart</button>
+          <button class="btn-pink" style="width: 100%; background: #2B1D24;" onclick="nav('cart')">Buy it now</button>
 
-        const cartBtn = document.getElementById('cartBtn');
-        const closeCart = document.getElementById('closeCart');
-        const cartDrawer = document.getElementById('cartDrawer');
-        const cartOverlay = document.getElementById('cartOverlay');
-        const cartItemsContainer = document.getElementById('cartItems');
-        const cartCount = document.getElementById('cartCount');
-        const cartTotal = document.getElementById('cartTotal');
+          <div class="p-desc" id="pd-desc"></div>
+        </div>
+      </div>
+    </div>
 
-        function toggleCart() {
-            cartDrawer.classList.toggle('active');
-            cartOverlay.classList.toggle('active');
-        }
+    <!-- CART PAGE -->
+    <div id="cart" class="page-view">
+      <h2>Your Cart</h2>
+      <br>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="cart-rows"></tbody>
+      </table>
+      <div style="text-align: right; margin-top: 20px;">
+        <h3>Subtotal: <span id="cart-total" style="color: var(--primary-pink);">Rs. 0.00</span></h3>
+        <br>
+        <button class="btn-pink" onclick="alert('Proceeding to Checkout!')">Checkout</button>
+      </div>
+    </div>
+  </div>
 
-        cartBtn.addEventListener('click', toggleCart);
-        closeCart.addEventListener('click', toggleCart);
-        cartOverlay.addEventListener('click', toggleCart);
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Moti Crafts</h4>
+        <p>Your premium destination for high-quality jewelry raw materials and craft supplies.</p>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p>📍 Ahmedpur East, Pakistan</p>
+        <p>✉️ moticrafts1@gmail.com</p>
+      </div>
+    </div>
+    <p style="text-align: center; border-top: 1px solid #444; padding-top: 15px;">© 2026 Moti Crafts. All Rights Reserved.</p>
+  </footer>
 
-        function addToCart(title, price, img) {
-            const existing = cart.find(item => item.title === title);
-            if(existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({ title, price, img, qty: 1 });
-            }
-            updateCart();
-            toggleCart();
-        }
+  <script>
+    const collectionsData = [
+      { id: 'kundan', name: 'Kundan', count: '32 products', img: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=400&q=80' },
+      { id: 'basic', name: 'Basic raw material', count: '38 products', img: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=400&q=80' },
+      { id: 'charms', name: 'Charms', count: '109 products', img: 'https://images.unsplash.com/photo-1611591475281-b1c970f7596a?auto=format&fit=crop&w=400&q=80' },
+      { id: 'tools', name: 'Tools & wire', count: '28 products', img: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80' }
+    ];
 
-        function removeFromCart(title) {
-            cart = cart.filter(item => item.title !== title);
-            updateCart();
-        }
+    const productsData = [
+      { id: 101, cat: 'kundan', title: '9x5 Glue On Metal Embellishments Flat Back Kundan Stones Clear', price: 100, img: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=400&q=80', desc: 'Bring an elegant finishing touch to your handmade creations with these clear Kundan embellishments.' },
+      { id: 102, cat: 'kundan', title: '4x10mm Glue on Kundan stone in Flat Back Mount', price: 110, img: 'https://images.unsplash.com/photo-1611591475281-b1c970f7596a?auto=format&fit=crop&w=400&q=80', desc: 'High quality acrylic/glass flat back kundan stones for jewelry design.' },
+      { id: 103, cat: 'charms', title: 'Multi Moon Colourful Kundan Beads', price: 120, img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=400&q=80', desc: 'Vibrant decorative charms for crafting and bangles.' }
+    ];
 
-        function updateCart() {
-            cartItemsContainer.innerHTML = '';
-            let total = 0;
-            let count = 0;
+    let cart = [];
+    let selectedItem = null;
 
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p style="text-align:center; color:#8c7381; margin-top:40px;">Your cart is empty.</p>';
-            }
+    function nav(viewId) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      document.getElementById(viewId).classList.add('active');
+      window.scrollTo(0,0);
+    }
 
-            cart.forEach(item => {
-                total += item.price * item.qty;
-                count += item.qty;
-                cartItemsContainer.innerHTML += `
-                    <div class="cart-item">
-                        <img src="${item.img}" alt="${item.title}" class="cart-item-img">
-                        <div class="cart-item-details">
-                            <div class="cart-item-title">${item.title}</div>
-                            <div class="cart-item-price">Rs. ${item.price} x ${item.qty}</div>
-                        </div>
-                        <i class="fa-solid fa-trash-can cart-item-remove" onclick="removeFromCart('${item.title}')"></i>
-                    </div>
-                `;
-            });
+    function renderHome() {
+      const grid = document.getElementById('category-grid');
+      grid.innerHTML = collectionsData.map(c => `
+        <div class="card" onclick="openCategory('${c.id}', '${c.name}')">
+          <img src="${c.img}">
+          <div class="card-body">
+            <div class="card-title">${c.name}</div>
+            <div class="card-count">${c.count}</div>
+          </div>
+        </div>
+      `).join('');
+    }
 
-            cartCount.innerText = count;
-            cartTotal.innerText = `Rs. ${total}`;
-        }
-    </script>
+    function openCategory(catId, catName) {
+      document.getElementById('cat-heading').innerText = catName;
+      const filtered = productsData.filter(p => p.cat === catId);
+      renderProductGrid(filtered.length ? filtered : productsData);
+      nav('collections');
+    }
+
+    function renderProductGrid(items) {
+      const grid = document.getElementById('product-grid');
+      grid.innerHTML = items.map(p => `
+        <div class="card" onclick="openProduct(${p.id})">
+          <img src="${p.img}">
+          <div class="card-body">
+            <div class="card-title">${p.title}</div>
+            <div class="price-tag">Rs. ${p.price}.00 PKR</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openProduct(id) {
+      selectedItem = productsData.find(p => p.id === id);
+      document.getElementById('pd-img').src = selectedItem.img;
+      document.getElementById('pd-title').innerText = selectedItem.title;
+      document.getElementById('pd-price').innerText = `Rs. ${selectedItem.price}.00 PKR`;
+      document.getElementById('pd-desc').innerText = selectedItem.desc;
+      nav('product-detail');
+    }
+
+    function addToCartCurrent() {
+      const match = cart.find(i => i.id === selectedItem.id);
+      if(match) match.qty += 1;
+      else cart.push({ ...selectedItem, qty: 1 });
+      updateCart();
+      nav('cart');
+    }
+
+    function updateCart() {
+      const rows = document.getElementById('cart-rows');
+      let total = 0;
+      let count = 0;
+
+      rows.innerHTML = cart.map((item, idx) => {
+        total += item.price * item.qty;
+        count += item.qty;
+        return `
+          <tr>
+            <td>
+              <strong>${item.title}</strong><br>
+              <small style="color: var(--primary-pink);">Rs. ${item.price}.00</small>
+            </td>
+            <td>
+              <button class="qty-btn" onclick="changeQty(${idx}, -1)">-</button>
+              <span style="margin: 0 8px;">${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+            </td>
+            <td>Rs. ${item.price * item.qty}.00</td>
+          </tr>
+        `;
+      }).join('');
+
+      document.getElementById('cart-total').innerText = `Rs. ${total}.00 PKR`;
+      document.getElementById('badge').innerText = count;
+    }
+
+    function changeQty(idx, amt) {
+      cart[idx].qty += amt;
+      if(cart[idx].qty <= 0) cart.splice(idx, 1);
+      updateCart();
+    }
+
+    // Initialize
+    renderHome();
+    renderProductGrid(productsData);
+  </script>
 </body>
 </html>
